@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#150b06">
 <title>Living World — T2A Ultima Online, Felucca only, full loot</title>
 <meta name="description" content="A 1998 T2A shard. Felucca only, no Trammel, full loot. Official free client from uo.com. No signup — your account is created on first login. 187.127.50.173:2593">
 
@@ -48,7 +49,9 @@
 
   <div class="hero-painting">
     <picture>
+      <source type="image/webp" media="(max-width: 1280px)" srcset="/img/hero-1280.webp">
       <source media="(max-width: 1280px)" srcset="/img/hero-1280.jpg">
+      <source type="image/webp" srcset="/img/hero.webp">
       <img class="hero-img" src="/img/hero.jpg" width="1916" height="821" alt="A red dragon breathing fire on a burning castle above a teal sea. A lighthouse stands on a rock to the left, a sailing boat crosses the bay, and thatched cottages sit on the cliff to the right, all under an amber sunset." fetchpriority="high">
     </picture>
     <span class="glow glow-fire" aria-hidden="true"></span>
@@ -87,7 +90,7 @@
   <section id="cap" class="reveal">
     <h2><small>The skill cap</small>Your cap goes up on the calendar, not on the mouse</h2>
     <p>Every account starts with a 700 skill cap and gains 25 more for each month the account exists, up to 1000 at twelve months.</p>
-    <ul class="cap">
+    <ul class="cap frame">
       <li><b>700</b><span>Your cap on day one</span></li>
       <li><b>725</b><span>One month from now</span></li>
       <li><b>1000</b><span>Twelve months from now</span></li>
@@ -124,8 +127,8 @@
       </li>
     </ol>
   </div>
-  <figure class="watch">
-    <img src="/img/moongate.jpg" width="800" height="1200" alt="A moongate: a tall oval of shimmering blue light standing on a stone platform inside a ring of standing stones at dusk, a lone traveler with a pack about to step in, two moons in the sky" loading="lazy">
+  <figure class="watch frame">
+    <div class="pic"><picture><source type="image/webp" srcset="/img/moongate.webp"><img src="/img/moongate.jpg" width="800" height="1200" alt="A moongate: a tall oval of shimmering blue light standing on a stone platform inside a ring of standing stones at dusk, a lone traveler with a pack about to step in, two moons in the sky" loading="lazy"></picture></div>
     <figcaption>In Britannia, a moongate takes you where the moons decide. This one takes you here.</figcaption>
   </figure>
   </section>
@@ -134,19 +137,19 @@
     <h2><small>First minutes</small>Making a character</h2>
     <p>You pick one of three templates, or build your own. A template is where you begin, not a class. Nothing is locked: every skill on the shard is open to every character, and you can leave your starting four behind entirely.</p>
     <ul class="templates">
-      <li>
-        <div class="card-img"><img src="/img/template-warrior.jpg" width="440" height="1024" alt="A warrior in a chainmail tunic and cloak, holding a plain longsword, on a stone terrace at sunset" loading="lazy"></div>
+      <li class="frame">
+        <div class="card-img"><picture><source type="image/webp" srcset="/img/template-warrior.webp"><img src="/img/template-warrior.jpg" width="440" height="1024" alt="A warrior in a chainmail tunic and cloak, holding a plain longsword, on a stone terrace at sunset" loading="lazy"></picture></div>
         <div class="card-text"><b>Warrior</b><span>Swordsmanship, Tactics, Anatomy, Healing — 50 each</span></div>
       </li>
-      <li>
-        <div class="card-img"><img src="/img/template-mage.jpg" width="440" height="1024" alt="A mage in a plain blue-grey robe holding an open spellbook, with a reagent pouch at the belt" loading="lazy"></div>
+      <li class="frame">
+        <div class="card-img"><picture><source type="image/webp" srcset="/img/template-mage.webp"><img src="/img/template-mage.jpg" width="440" height="1024" alt="A mage in a plain blue-grey robe holding an open spellbook, with a reagent pouch at the belt" loading="lazy"></picture></div>
         <div class="card-text"><b>Mage</b><span>Magery, Evaluate Intelligence, Meditation, Inscription — 50 each</span></div>
       </li>
-      <li>
-        <div class="card-img"><img src="/img/template-blacksmith.jpg" width="440" height="1024" alt="A blacksmith in a leather apron holding a hammer, a pickaxe on the back, beside an anvil and a forge" loading="lazy"></div>
+      <li class="frame">
+        <div class="card-img"><picture><source type="image/webp" srcset="/img/template-blacksmith.webp"><img src="/img/template-blacksmith.jpg" width="440" height="1024" alt="A blacksmith in a leather apron holding a hammer, a pickaxe on the back, beside an anvil and a forge" loading="lazy"></picture></div>
         <div class="card-text"><b>Blacksmith</b><span>Blacksmith, Arms Lore, Mining, Tinkering — 50 each</span></div>
       </li>
-      <li class="advanced">
+      <li class="advanced frame">
         <div class="card-img" aria-hidden="true">?</div>
         <div class="card-text"><b>Advanced</b><span>any skills from the list, 120 points in total</span></div>
       </li>
@@ -185,8 +188,8 @@
         <li><b>No account recovery, for now.</b> See step 3.</li>
       </ul>
     </div>
-    <figure class="watch">
-      <img src="/img/dragon-tower.jpg" width="800" height="1200" alt="A red dragon perched on the battlements of a stone tower at sunset, looking out over the sea toward a distant lighthouse" loading="lazy">
+    <figure class="watch frame">
+      <div class="pic"><picture><source type="image/webp" srcset="/img/dragon-tower.webp"><img src="/img/dragon-tower.jpg" width="800" height="1200" alt="A red dragon perched on the battlements of a stone tower at sunset, looking out over the sea toward a distant lighthouse" loading="lazy"></picture></div>
       <figcaption>The world runs on its own.</figcaption>
     </figure>
   </section>
