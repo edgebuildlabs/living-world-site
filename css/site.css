@@ -269,6 +269,8 @@ section { padding: 2.75rem 0 1.5rem; }
 }
 .steps li p:last-child { margin-bottom: 0; }
 .steps h3 { margin-bottom: 0.25em; }
+.steps .alt { margin-top: 0.9rem; padding: 0.7rem 1rem; border-left: 3px solid var(--amber); background: var(--parchment-light); font-size: 1.05rem; }
+.steps .alt b { font-family: var(--caps); font-size: 0.9rem; color: var(--terracotta-deep); }
 
 .fields {
   display: inline-grid; grid-template-columns: max-content max-content; gap: 0.25rem 1rem;
