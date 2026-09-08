@@ -167,8 +167,10 @@ img { max-width: 100%; height: auto; display: block; }
 .hero-painting {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 1916 / 821;
-  max-height: 84vh;
+  width: 100%;
+  /* height from the painting's own ratio, capped so the address bar stays on the first screen;
+     no aspect-ratio here: with a max-height, aspect-ratio narrows the box instead of cropping the image */
+  height: min(80vh, 42.85vw);
   background: var(--night);
 }
 .hero-painting img.hero-img {
@@ -444,7 +446,7 @@ footer .contact a { color: var(--gold-light); }
 @media (max-width: 900px) {
   .hero-bar { grid-template-columns: 1fr; gap: 1rem; padding: 1.25rem 1.5rem; }
   .connect { grid-template-columns: max-content max-content; width: max-content; max-width: 100%; }
-  .hero-painting { aspect-ratio: auto; height: 62vh; max-height: none; }
+  .hero-painting { height: 62vh; }
   .hero-title { padding: 6rem 1.5rem 1.5rem; }
 }
 
