@@ -49,6 +49,8 @@
 
   <div class="hero-painting">
     <picture>
+      <source type="image/webp" media="(max-width: 600px)" srcset="/img/hero-portrait.webp">
+      <source media="(max-width: 600px)" srcset="/img/hero-portrait.jpg">
       <source type="image/webp" media="(max-width: 1280px)" srcset="/img/hero-1280.webp">
       <source media="(max-width: 1280px)" srcset="/img/hero-1280.jpg">
       <source type="image/webp" srcset="/img/hero.webp">
@@ -231,8 +233,11 @@
 
 <footer>
   <div class="inner">
+    <picture class="seal"><source type="image/webp" srcset="/img/seal.webp"><img src="/img/seal.png" width="360" height="360" alt="Selo do Living World: duas colunas de pedra esculpidas como serpentes erguendo-se do mar, um navio passando entre elas sob o sol nascente" loading="lazy"></picture>
+    <div>
     <p>Living World — no ar desde 9 de setembro de 2026. <span class="mono">187.127.50.173:2593</span></p>
     <p class="contact">Contato: <a href="mailto:edgebuildlabs@gmail.com">edgebuildlabs@gmail.com</a> · <a href="https://x.com/edgebuildlabs">@edgebuildlabs</a> no X</p>
+    </div>
   </div>
 </footer>
 
