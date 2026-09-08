@@ -1,0 +1,395 @@
+/* Living World — one column, no script, no CDN. Edit the HTML; there is no build.
+   Designed for 1920x1080 first; smaller screens must not break.
+   Motion is CSS only and switches off under prefers-reduced-motion. */
+
+@font-face {
+  font-family: "Cinzel Decorative";
+  src: url("/fonts/CinzelDecorative-Bold.woff2") format("woff2");
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Cinzel";
+  src: url("/fonts/Cinzel-Variable.woff2") format("woff2");
+  font-weight: 400 900; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "IM Fell English";
+  src: url("/fonts/IMFellEnglish-Regular.woff2") format("woff2");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "IM Fell English";
+  src: url("/fonts/IMFellEnglish-Italic.woff2") format("woff2");
+  font-weight: 400; font-style: italic; font-display: swap;
+}
+
+:root {
+  --ink: #2a1a12;
+  --ink-soft: #4a3628;
+  --parchment: #ead9b4;
+  --parchment-light: #f3e7c9;
+  --parchment-deep: #d9c391;
+  --stone: #8c7f72;
+  --stone-dark: #5b514a;
+  --amber: #d98a3a;
+  --amber-light: #f2c46a;
+  --terracotta: #b5542a;
+  --terracotta-deep: #8f3b1e;
+  --smoke: #2a1a12;
+  --night: #150b06;
+  --display: "Cinzel Decorative", "Cinzel", "Palatino Linotype", Palatino, Georgia, serif;
+  --caps: "Cinzel", "Palatino Linotype", Palatino, Georgia, serif;
+  --serif: "IM Fell English", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "Cascadia Mono", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+* { box-sizing: border-box; }
+
+html { color-scheme: light; }
+
+body {
+  margin: 0;
+  background: var(--parchment) url("/img/parchment.jpg") repeat center top / 900px 900px;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+}
+
+a { color: var(--terracotta-deep); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--terracotta); }
+
+h1, h2, h3 { font-family: var(--caps); font-weight: 700; line-height: 1.15; margin: 0 0 0.5em; }
+h1 { font-family: var(--display); }
+h2 { font-size: 1.7rem; letter-spacing: 0.02em; color: var(--ink); }
+h2 small {
+  display: block; font-family: var(--sans); font-weight: 400; font-size: 0.75rem;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--terracotta-deep); margin-bottom: 0.5rem;
+}
+h3 { font-family: var(--serif); font-size: 1.35rem; font-weight: 400; }
+
+p { margin: 0 0 1em; }
+code, .mono { font-family: var(--mono); }
+strong { font-weight: 400; color: var(--terracotta-deep); }
+img { max-width: 100%; height: auto; display: block; }
+
+/* ---------- motion ---------- */
+
+@keyframes kenburns { from { transform: scale(1); } to { transform: scale(1.06); } }
+@keyframes flicker {
+  0%   { opacity: 0.45; transform: scale(1); }
+  30%  { opacity: 0.75; transform: scale(1.06); }
+  55%  { opacity: 0.5;  transform: scale(0.97); }
+  80%  { opacity: 0.8;  transform: scale(1.04); }
+  100% { opacity: 0.55; transform: scale(1); }
+}
+@keyframes lantern { from { opacity: 0.35; transform: scale(0.9); } to { opacity: 0.8; transform: scale(1.15); } }
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+@keyframes ember {
+  0%   { transform: translate(0, 0) scale(1); opacity: 0; }
+  10%  { opacity: 0.9; }
+  100% { transform: translate(var(--drift, 20px), -420px) scale(0.3); opacity: 0; }
+}
+@keyframes fadein { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+
+/* ---------- top bar ---------- */
+
+.lang {
+  position: absolute; top: 0; right: 0; z-index: 5;
+  display: flex; gap: 1.25rem;
+  padding: 0.9rem 1.5rem;
+  font-family: var(--sans); font-size: 0.8rem; letter-spacing: 0.06em;
+  background: linear-gradient(180deg, rgba(21, 11, 6, 0.55), transparent);
+  border-bottom-left-radius: 6px;
+}
+.lang a { color: rgba(242, 196, 106, 0.8); text-decoration: none; text-shadow: 0 1px 2px #000; }
+.lang a:hover { color: #fff; text-decoration: underline; }
+.lang [aria-current="page"] { color: var(--amber-light); }
+
+/* ---------- hero: the painting, then the bar with the address ---------- */
+
+.hero {
+  position: relative;
+  background: var(--night);
+  color: var(--parchment-light);
+  border-bottom: 5px solid var(--terracotta-deep);
+}
+
+.hero-painting {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1916 / 821;
+  max-height: 84vh;
+  background: var(--night);
+}
+.hero-painting img.hero-img {
+  width: 100%; height: 100%; object-fit: cover; object-position: 30% 50%;
+  transform-origin: 45% 40%;
+  animation: kenburns 50s ease-in-out infinite alternate;
+}
+
+/* glows sit on percentages of the painting: the burning keep and the lantern */
+.glow {
+  position: absolute; pointer-events: none; border-radius: 50%;
+  mix-blend-mode: screen;
+}
+.glow-fire {
+  left: 55%; top: 8%; width: 20%; height: 32%;
+  background: radial-gradient(closest-side, rgba(255, 150, 40, 0.75), rgba(255, 90, 20, 0.3) 45%, transparent 70%);
+  animation: flicker 1.7s ease-in-out infinite;
+}
+.glow-fire2 {
+  left: 60%; top: 14%; width: 10%; height: 18%;
+  background: radial-gradient(closest-side, rgba(255, 230, 150, 0.8), transparent 70%);
+  animation: flicker 1.1s ease-in-out infinite reverse;
+}
+.glow-lantern {
+  left: 10.5%; top: 37%; width: 5%; height: 11%;
+  background: radial-gradient(closest-side, rgba(255, 220, 140, 0.95), rgba(255, 180, 80, 0.4) 40%, transparent 70%);
+  animation: lantern 2.6s ease-in-out infinite alternate;
+}
+
+/* embers rising from the castle */
+.embers { position: absolute; left: 52%; top: 22%; width: 24%; height: 30%; pointer-events: none; }
+.embers i {
+  position: absolute; bottom: 0; width: 5px; height: 5px; border-radius: 50%;
+  background: #ffc46a; box-shadow: 0 0 8px 2px rgba(255, 150, 50, 0.8);
+  opacity: 0;
+  animation: ember 6s linear infinite;
+}
+.embers i:nth-child(1)  { left: 5%;  animation-delay: 0s;    animation-duration: 7s;   --drift: 30px; }
+.embers i:nth-child(2)  { left: 18%; animation-delay: 1.1s;  animation-duration: 6s;   --drift: -20px; }
+.embers i:nth-child(3)  { left: 30%; animation-delay: 2.3s;  animation-duration: 8s;   --drift: 45px; }
+.embers i:nth-child(4)  { left: 42%; animation-delay: 0.6s;  animation-duration: 6.5s; --drift: 10px; }
+.embers i:nth-child(5)  { left: 55%; animation-delay: 3.2s;  animation-duration: 7.5s; --drift: -35px; }
+.embers i:nth-child(6)  { left: 66%; animation-delay: 1.8s;  animation-duration: 6.2s; --drift: 25px; }
+.embers i:nth-child(7)  { left: 78%; animation-delay: 4.1s;  animation-duration: 8.5s; --drift: 55px; }
+.embers i:nth-child(8)  { left: 88%; animation-delay: 2.9s;  animation-duration: 7.2s; --drift: -15px; }
+.embers i:nth-child(9)  { left: 12%; animation-delay: 4.8s;  animation-duration: 6.8s; --drift: 40px; }
+.embers i:nth-child(10) { left: 48%; animation-delay: 5.5s;  animation-duration: 7.8s; --drift: -25px; }
+
+/* the title over the rocks at the bottom-left of the painting */
+.hero-title {
+  position: absolute; left: 0; right: 0; bottom: 0; z-index: 2;
+  padding: 8rem 4vw 2.2rem;
+  background: linear-gradient(180deg, transparent, rgba(21, 11, 6, 0.55) 45%, rgba(21, 11, 6, 0.9));
+}
+.hero-title h1 {
+  font-size: clamp(2.4rem, 5vw, 5.6rem);
+  letter-spacing: 0.05em;
+  margin: 0 0 0.25em;
+  color: var(--amber-light);
+  text-shadow: 0 2px 0 #4a1e0c, 0 8px 28px rgba(0, 0, 0, 0.85);
+  animation: rise 1.1s ease-out both;
+}
+.hero-title h1 span { color: var(--parchment-light); }
+.identity {
+  max-width: 58rem;
+  font-size: clamp(1.1rem, 1.45vw, 1.55rem);
+  line-height: 1.4; margin: 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.95), 0 0 20px rgba(0, 0, 0, 0.8);
+  animation: rise 1.1s 0.25s ease-out both;
+}
+
+/* the bar under the painting: address, points, client, date */
+.hero-bar {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 1rem 3rem; align-items: center;
+  max-width: 120rem; margin: 0 auto;
+  padding: 1.4rem 4vw 1.6rem;
+  background:
+    linear-gradient(90deg, rgba(255, 190, 90, 0.06), transparent 40%),
+    linear-gradient(180deg, #1c0f08, #120904);
+  animation: rise 1.1s 0.45s ease-out both;
+}
+.connect {
+  display: grid;
+  grid-template-columns: max-content max-content max-content max-content;
+  gap: 0.2rem 1.4rem; align-items: baseline;
+  margin: 0;
+  padding: 0.9rem 1.5rem;
+  border: 1px solid var(--amber);
+  box-shadow: inset 0 0 0 4px #120904, inset 0 0 0 5px rgba(242, 196, 106, 0.4), 0 0 30px rgba(255, 160, 60, 0.15);
+  background: rgba(42, 26, 18, 0.6);
+}
+.connect dt { font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--amber); }
+.connect dd { margin: 0; font-family: var(--mono); font-size: 1.7rem; color: #fff; user-select: all; -webkit-user-select: all; }
+
+.hero-notes { max-width: 60rem; }
+.hero-notes p { margin: 0 0 0.35em; }
+.newbie { font-size: 1.15rem; color: var(--parchment-light); }
+.newbie strong { color: var(--amber-light); }
+.client-line { font-size: 1.05rem; color: rgba(243, 231, 201, 0.8); }
+.open-since { font-style: italic; color: var(--amber-light); }
+
+/* ---------- sections ---------- */
+
+.col { max-width: 46rem; margin: 0 auto; padding: 1rem 1.5rem 3rem; }
+.col.wide { max-width: 78rem; }
+
+section { padding: 2.75rem 0 1.5rem; }
+
+/* scroll reveal, only where the browser has scroll-driven animations */
+@supports (animation-timeline: view()) {
+  .reveal { animation: fadein linear both; animation-timeline: view(); animation-range: entry 0% entry 35%; }
+}
+
+.fleuron {
+  display: block; width: 100%; height: 26px; margin: 1.75rem 0 0;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 26'><g fill='none' stroke='%238f3b1e' stroke-width='1.2'><path d='M0 13h150M250 13h150'/></g><g fill='%23d98a3a' stroke='%238f3b1e' stroke-width='1'><path d='M200 4l9 9-9 9-9-9z'/><path d='M178 13l6-4v8zM222 13l-6-4v8z'/></g><g fill='none' stroke='%238f3b1e' stroke-width='1.2'><path d='M158 13c8-8 14-8 20 0M222 13c6-8 12-8 20 0'/></g></svg>") center / auto 26px no-repeat;
+}
+
+/* timeline */
+.cap {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+  margin: 1.25rem 0; padding: 0; list-style: none;
+  border: 1px solid var(--terracotta-deep);
+  box-shadow: inset 0 0 0 3px var(--parchment-light), inset 0 0 0 4px var(--stone), 0 10px 30px -18px rgba(42, 26, 18, 0.6);
+  background: var(--parchment-light);
+}
+.cap li { padding: 1.1rem 0.75rem 0.9rem; text-align: center; border-right: 1px solid var(--stone); }
+.cap li:last-child { border-right: 0; }
+.cap b { display: block; font-family: var(--caps); font-size: 2.3rem; color: var(--terracotta-deep); line-height: 1.1; }
+.cap span { font-family: var(--sans); font-size: 0.8rem; letter-spacing: 0.04em; color: var(--stone-dark); }
+
+/* how to get in */
+.steps { counter-reset: step; list-style: none; padding: 0; margin: 1rem 0; }
+.steps li { position: relative; padding-left: 3.4rem; margin-bottom: 1.5rem; }
+.steps li::before {
+  counter-increment: step; content: counter(step);
+  position: absolute; left: 0; top: 0.05rem;
+  width: 2.4rem; height: 2.4rem; border-radius: 50%;
+  background: var(--terracotta-deep); color: var(--parchment-light);
+  box-shadow: inset 0 0 0 2px var(--terracotta-deep), inset 0 0 0 3px var(--amber-light);
+  font-family: var(--caps); font-size: 1.15rem;
+  display: flex; align-items: center; justify-content: center;
+}
+.steps li p:last-child { margin-bottom: 0; }
+.steps h3 { margin-bottom: 0.25em; }
+
+.fields {
+  display: inline-grid; grid-template-columns: max-content max-content; gap: 0.25rem 1rem;
+  margin: 0.4rem 0 0.8rem; padding: 0.6rem 1rem;
+  border: 1px solid var(--terracotta-deep); background: var(--parchment-light);
+}
+.fields dt { font-family: var(--sans); color: var(--stone-dark); font-size: 0.85rem; }
+.fields dd { margin: 0; font-family: var(--mono); user-select: all; -webkit-user-select: all; }
+
+/* templates: four cards, three painted */
+.templates {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem;
+  margin: 1.5rem 0; padding: 0; list-style: none;
+}
+.templates li {
+  position: relative; overflow: hidden;
+  border: 1px solid var(--terracotta-deep); background: var(--parchment-light);
+  box-shadow: inset 0 0 0 3px var(--parchment-light), inset 0 0 0 4px var(--stone), 0 14px 34px -20px rgba(42, 26, 18, 0.8);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.templates li:hover { transform: translateY(-6px); box-shadow: inset 0 0 0 3px var(--parchment-light), inset 0 0 0 4px var(--stone), 0 24px 44px -20px rgba(42, 26, 18, 0.9); }
+.templates .card-img { margin: 4px; overflow: hidden; aspect-ratio: 440 / 640; }
+.templates .card-img img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; transform-origin: 50% 20%; transition: transform 1.2s ease; }
+.templates li:hover .card-img img { transform: scale(1.05); }
+.templates .card-text { padding: 0.9rem 1.1rem 1.1rem; }
+.templates b { display: block; font-family: var(--caps); font-size: 1.15rem; font-weight: 700; color: var(--terracotta-deep); margin-bottom: 0.25rem; }
+.templates span { font-size: 1rem; color: var(--ink-soft); }
+.templates .advanced .card-img {
+  display: flex; align-items: center; justify-content: center;
+  background: radial-gradient(ellipse at 50% 40%, #3a2418, #150b06 75%);
+  color: var(--amber-light); font-family: var(--display); font-size: 5rem;
+}
+
+/* the vista: full-bleed painting between sections */
+.vista {
+  position: relative; overflow: hidden;
+  min-height: 62vh;
+  display: grid; place-items: center;
+  background: var(--night) url("/img/vista.jpg") center 35% / cover no-repeat;
+  color: var(--parchment-light);
+  border-top: 5px solid var(--terracotta-deep); border-bottom: 5px solid var(--terracotta-deep);
+  text-align: center; padding: 5rem 1.5rem;
+}
+@media (min-width: 1100px) and (hover: hover) { .vista { background-attachment: fixed; } }
+.vista::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 60%, rgba(21, 11, 6, 0.55), rgba(21, 11, 6, 0.15) 60%, rgba(21, 11, 6, 0.6)); }
+.vista .inner { position: relative; max-width: 50rem; }
+.vista .one-world {
+  font-family: var(--caps); font-size: clamp(1.4rem, 2.4vw, 2.4rem); line-height: 1.3;
+  color: var(--amber-light); text-shadow: 0 2px 0 #4a1e0c, 0 8px 30px rgba(0, 0, 0, 0.9);
+  margin: 0 0 1rem;
+}
+.vista p { font-size: 1.2rem; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.95), 0 0 20px rgba(0, 0, 0, 0.8); margin: 0; }
+
+/* era sheet */
+.sheet { list-style: none; padding: 0; margin: 1rem 0; font-family: var(--mono); font-size: 0.95rem; }
+.sheet li { padding: 0.5rem 0; border-bottom: 1px dashed rgba(90, 58, 42, 0.4); }
+.sheet li:last-child { border-bottom: 0; }
+
+/* what does not exist: text with the dragon on the tower beside it */
+.not-here { display: grid; grid-template-columns: 1fr 22rem; gap: 3rem; align-items: start; }
+.none { list-style: none; padding: 0; margin: 1rem 0; }
+.none li { padding: 0.8rem 0; border-bottom: 1px solid rgba(90, 58, 42, 0.25); }
+.none li:last-child { border-bottom: 0; }
+.none b { font-family: var(--caps); font-size: 0.9rem; color: var(--terracotta-deep); display: block; margin-bottom: 0.2rem; }
+.watch {
+  margin: 0; border: 1px solid var(--terracotta-deep); background: var(--parchment-light);
+  box-shadow: inset 0 0 0 3px var(--parchment-light), inset 0 0 0 4px var(--stone), 0 14px 34px -20px rgba(42, 26, 18, 0.8);
+  padding: 4px;
+}
+.watch img { width: 100%; }
+.watch figcaption { font-style: italic; font-size: 0.95rem; color: var(--ink-soft); padding: 0.6rem 0.5rem 0.4rem; text-align: center; }
+
+/* faq */
+.faq dt { font-size: 1.35rem; margin-top: 1.2rem; }
+.faq dd { margin: 0.2rem 0 0; }
+
+/* footer */
+footer {
+  border-top: 5px solid var(--terracotta-deep);
+  background: linear-gradient(180deg, #1c0f08, #120904);
+  color: rgba(243, 231, 201, 0.85);
+}
+footer .inner { max-width: 78rem; margin: 0 auto; padding: 1.75rem 1.5rem; font-size: 1.05rem; }
+footer p { margin: 0 0 0.4rem; }
+footer .mono { color: var(--amber-light); }
+footer .contact { font-size: 0.95rem; color: rgba(243, 231, 201, 0.7); }
+footer .contact a { color: var(--amber-light); }
+
+/* ---------- smaller screens: must not break ---------- */
+
+@media (max-width: 1100px) {
+  .templates { grid-template-columns: repeat(2, 1fr); }
+  .not-here { grid-template-columns: 1fr; }
+  .watch { max-width: 22rem; }
+}
+
+@media (max-width: 900px) {
+  .hero-bar { grid-template-columns: 1fr; gap: 1rem; padding: 1.25rem 1.5rem; }
+  .connect { grid-template-columns: max-content max-content; width: max-content; max-width: 100%; }
+  .hero-painting { aspect-ratio: auto; height: 62vh; max-height: none; }
+  .hero-title { padding: 6rem 1.5rem 1.5rem; }
+}
+
+@media (max-width: 600px) {
+  body { font-size: 1.1rem; }
+  .lang { padding: 0.75rem 1rem; gap: 1rem; }
+  .hero-painting { height: 58vh; }
+  .hero-painting img.hero-img { object-position: 38% 50%; }
+  .glow, .embers { display: none; }
+  .connect { grid-template-columns: 1fr; gap: 0.1rem 0; width: 100%; }
+  .connect dt { margin-top: 0.4rem; }
+  .connect dd { font-size: 1.35rem; word-break: break-all; }
+  .cap { grid-template-columns: 1fr; }
+  .cap li { border-right: 0; border-bottom: 1px solid var(--stone); }
+  .cap li:last-child { border-bottom: 0; }
+  .templates { grid-template-columns: 1fr; }
+  .steps li { padding-left: 3rem; }
+  .vista { min-height: 50vh; padding: 3.5rem 1.25rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .vista { background-attachment: scroll; }
+}
