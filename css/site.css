@@ -525,6 +525,22 @@ kbd { font-family: var(--caps); font-weight: 600; font-size: 0.78em; letter-spac
 .rules li { margin-bottom: 0.45rem; }
 .rules li::marker { color: var(--terracotta-deep); }
 
+/* the Guide's index: the nine seals as a clickable table of contents */
+.index {
+  display: grid; grid-template-columns: repeat(9, 1fr); gap: 0.6rem;
+  padding: 1.1rem 1rem 0.9rem; margin: 1.75rem 0 0.5rem;
+}
+.index a { text-align: center; text-decoration: none; color: var(--ink); font-family: var(--caps); font-weight: 600; font-size: 0.7rem; letter-spacing: 0.08em; line-height: 1.2; }
+.index img { width: 4.6rem; height: 4.6rem; margin: 0 auto 0.4rem; filter: drop-shadow(0 4px 8px rgba(42, 26, 18, 0.5)); transition: transform 0.25s ease; }
+.index a:hover img, .index a:focus-visible img { transform: translateY(-3px) scale(1.06); }
+.index a:hover span { color: var(--terracotta-deep); }
+.index span { display: block; }
+.chapter { scroll-margin-top: 1rem; }
+.up { text-align: right; margin: 1.2rem 0 0; }
+.up a { font-family: var(--caps); font-weight: 600; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terracotta-deep); text-decoration: none; }
+.up a::before { content: "\2191\00a0"; color: var(--gold-deep); }
+.up a:hover { color: var(--terracotta); }
+
 /* ---------- smaller screens: must not break ---------- */
 
 @media (max-width: 1100px) {
@@ -534,6 +550,8 @@ kbd { font-family: var(--caps); font-weight: 600; font-size: 0.78em; letter-spac
 }
 
 @media (max-width: 900px) {
+  .index { grid-template-columns: repeat(3, 1fr); gap: 0.8rem 0.4rem; }
+  .index img { width: 4.2rem; height: 4.2rem; }
   .chapter { grid-template-columns: 1fr; gap: 1rem; }
   .guide-card { grid-template-columns: 1fr; justify-items: start; }
   .chapter-seal img { width: 7rem; height: 7rem; }
