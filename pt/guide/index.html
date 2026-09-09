@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#150b06">
+<title>Guia do Living World</title>
+<meta name="description" content="O que Ultima Online nunca conta, e o que o Living World faz diferente: as palavras que os NPCs entendem, skills e caps, morte, crime, viagem, pets, casa e barco.">
+
+<link rel="canonical" href="https://livingworld.edgebuildlabs.tech/pt/guide/">
+<link rel="alternate" hreflang="en" href="https://livingworld.edgebuildlabs.tech/guide/">
+<link rel="alternate" hreflang="pt-BR" href="https://livingworld.edgebuildlabs.tech/pt/guide/">
+<link rel="alternate" hreflang="es" href="https://livingworld.edgebuildlabs.tech/es/guide/">
+<link rel="alternate" hreflang="x-default" href="https://livingworld.edgebuildlabs.tech/guide/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Living World">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://livingworld.edgebuildlabs.tech/pt/guide/">
+<meta property="og:title" content="Guia do Living World">
+<meta property="og:description" content="O que Ultima Online nunca conta, e o que o Living World faz diferente. As palavras que os NPCs entendem, skills e caps, morte, crime, viagem, pets, casa e barco.">
+<meta property="og:image" content="https://livingworld.edgebuildlabs.tech/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Um dragão vermelho cospe fogo num castelo em chamas sobre um mar verde-azulado, com um farol e um barco a vela, pintado na luz âmbar do pôr do sol">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Guia do Living World">
+<meta name="twitter:description" content="O que Ultima Online nunca conta, e o que o Living World faz diferente.">
+<meta name="twitter:image" content="https://livingworld.edgebuildlabs.tech/img/og.jpg">
+
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64">
+<link rel="icon" href="/img/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="stylesheet" href="/css/site.css">
+</head>
+<body class="guide">
+
+<header class="guide-hero">
+  <nav class="lang" aria-label="Idioma">
+    <a href="/pt/" class="home">Living World</a>
+    <a href="/guide/" hreflang="en" lang="en">English</a>
+    <a href="/pt/guide/" hreflang="pt-BR" aria-current="page">Português</a>
+    <a href="/es/guide/" hreflang="es" lang="es">Español</a>
+  </nav>
+  <div class="guide-hero-text">
+    <h1>O <span>Guia</span></h1>
+    <p class="identity">Britannia não se explica. Em 1998 ninguém esperava que explicasse: você perguntava a outro jogador, ou descobria morrendo. Esta página é o outro jogador. Ela cobre o que o jogo nunca conta e o que este shard faz diferente. Não cobre o que você deveria descobrir sozinho.</p>
+    <p class="how">As linhas <em>Diga isto</em> são as palavras exatas que o servidor entende. Digite na linha de chat e aperte Enter. Onde precisar de nome, use o nome que aparece sobre a cabeça do NPC ou do pet.</p>
+  </div>
+</header>
+
+<main>
+<div class="col wide">
+
+<section class="chapter reveal" id="first-minute">
+  <figure class="chapter-seal"><picture><source type="image/webp" srcset="/img/seal.webp"><img src="/img/seal.png" width="360" height="360" alt="Selo do Living World: duas colunas de pedra esculpidas como serpentes erguendo-se do mar, um navio passando entre elas sob o sol nascente" loading="lazy"></picture></figure>
+  <div class="chapter-body">
+    <h2><small>Capítulo 1</small>O primeiro minuto</h2>
+    <p>Segure o botão direito do mouse para andar; quanto mais longe o cursor do personagem, mais rápido. Clique duplo com o direito anda até o ponto. A câmera não gira.</p>
+    <ul class="keys">
+      <li><kbd>Alt</kbd>+<kbd>P</kbd> paperdoll</li>
+      <li><kbd>Alt</kbd>+<kbd>I</kbd> mochila</li>
+      <li><kbd>Alt</kbd>+<kbd>K</kbd> skills</li>
+      <li><kbd>Alt</kbd>+<kbd>S</kbd> status</li>
+      <li><kbd>Alt</kbd>+<kbd>J</kbd> diário</li>
+      <li><kbd>Alt</kbd>+<kbd>O</kbd> opções</li>
+      <li><kbd>Tab</kbd> liga e desliga o war mode</li>
+    </ul>
+    <p>Em war mode, clique duplo ataca. Enter abre a linha de chat; Enter de novo envia, e todo mundo a uma tela de distância ouve. Comece a linha com <code>!</code> para gritar a uma tela e meia, <code>;</code> para sussurrar a um tile, <code>:</code> para emote.</p>
+    <p>As macros ficam no paperdoll, em Options. Configure pelo menos duas: <strong>Last Target</strong> e <strong>Target Self</strong>. Toda magia, bandagem e poção pede um alvo; essas duas teclas respondem.</p>
+    <p>Razor, três ajustes e nada mais: teclas para Target Self e Last Target; o agente Use Once para poções; um object delay um pouco acima do seu ping. O resto pode esperar uma semana.</p>
+  </div>
+</section>
+
+<section class="chapter reveal" id="town">
+  <figure class="chapter-seal"><picture><source type="image/webp" srcset="/img/seal-market.webp"><img src="/img/seal-market.png" width="360" height="360" alt="Selo: uma balança de mercador com uma bolsa de moedas e uma pilha de moedas, um pergaminho atrás" loading="lazy"></picture></figure>
+  <div class="chapter-body">
+    <h2><small>Capítulo 2</small>Falando com a cidade</h2>
+    <p>Vendedores e banqueiros não abrem janela quando você clica neles. Você fala.</p>
+    <dl class="say">
+      <dt>vendor buy</dt><dd>a até 4 tiles do vendedor. <code>vendor sell</code> idem. Ou pelo nome: <code>Aldous sell</code>.</dd>
+      <dt>bank</dt><dd>a até 12 tiles de um banqueiro, abre o seu cofre.</dd>
+      <dt>balance</dt><dd>quanto ouro há nele.</dd>
+      <dt>withdraw 500</dt><dd>solta essa quantia na mochila, até 5000 por vez.</dd>
+      <dt>check 5000</dt><dd>transforma ouro em cheque bancário, de 5000 a um milhão.</dd>
+      <dt>guards</dt><dd>em cidade guardada, chama os guardas sobre quem acabou de cometer um crime por perto. Chegam na hora e matam na hora.</dd>
+      <dt>Aldous train</dt><dd>qualquer morador que saiba uma skill lista o que ensina. Escolha a skill no menu que aparece e arraste ouro nele. Um gold compra um décimo de ponto. O treinador ensina até 42.0 e não além.</dd>
+      <dt>Aldous hire</dt><dd>algumas pessoas trabalham para você por dia. Solte ouro nelas para contratar.</dd>
+      <dt>Aldous time</dt><dd>diz a hora. <code>news</code> perto do arauto da cidade.</dd>
+    </dl>
+    <p>O banco guarda 125 itens, de qualquer peso. Os vendedores repõem o estoque a cada hora, e neste shard não podem ser mortos. Criminoso não usa o banco; assassino não compra em cidade guardada.</p>
+    <p>Você começa com 1000 de ouro, uma adaga, uma vela, um livro e as ferramentas do seu template: armadura studded, uma espada e bandagens para o warrior; um spellbook, trinta de cada reagente e um chapéu de mago para o mage; tenazes, picaretas, cinquenta lingotes de ferro, um avental e ferramentas de tinker para o blacksmith.</p>
+  </div>
+</section>
+
+<section class="chapter reveal" id="skills">
+  <figure class="chapter-seal"><picture><source type="image/webp" srcset="/img/seal-craft.webp"><img src="/img/seal-craft.png" width="360" height="360" alt="Selo: uma bigorna com um martelo cruzado com uma pena, um livro e um anzol" loading="lazy"></picture></figure>
+  <div class="chapter-body">
+    <h2><small>Capítulo 3</small>Skills e atributos</h2>
+    <p>Não existe nível. Skill sobe fazendo. Todo personagem tem um teto para a soma de todas as skills, e este shard move esse teto pelo calendário: 700 no dia em que a conta é criada, mais 25 a cada 30 dias de existência da conta, até 1000 depois de doze meses. Conta a idade da conta, não o tempo jogado. Cada skill sozinha para em 100.</p>
+    <p>Os atributos funcionam do mesmo jeito. Força, Destreza e Inteligência somam no máximo 250, e nenhum passa de 100. Então ninguém é 100/100/100; você escolhe onde os 250 vão.</p>
+    <p>Abra a janela de skills com Alt+K. Cada skill tem uma seta. <strong>Para cima</strong> quer dizer que pode subir. <strong>Para baixo</strong> quer dizer que pode ser drenada para abrir espaço para outra. O <strong>cadeado</strong> quer dizer que fica onde está. Quando o total chega ao teto, uma skill marcada para baixo perde o que outra ganha; se nenhuma estiver marcada para baixo, nenhuma sobe. Os atributos têm as mesmas setas.</p>
+    <p>Como o ganho funciona aqui:</p>
+    <ul class="rules">
+      <li>Abaixo de 10.0, a skill sobe a cada uso. Acima disso, quanto mais difícil a tarefa para o seu nível, maior a chance. Falhar também ensina.</li>
+      <li>Não existe ganho garantido por tempo. Se uma skill empacou, a tarefa está fácil demais ou difícil demais, não "cedo demais".</li>
+      <li>Repetir a mesma ação no mesmo lugar é vigiado: mais de três vezes dentro do mesmo quadrado de 5×5 tiles em cinco minutos, e a skill para de subir ali. Ande.</li>
+      <li>Um atributo sobe no máximo uma vez a cada dez minutos.</li>
+      <li>Um morador pode ensinar uma skill até 42.0 por ouro. Depois disso, só prática.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="chapter reveal" id="death">
+  <figure class="chapter-seal"><picture><source type="image/webp" srcset="/img/seal-ankh.webp"><img src="/img/seal-ankh.png" width="360" height="360" alt="Selo: um ankh de pedra sobre um altar entre duas velas acesas" loading="lazy"></picture></figure>
+  <div class="chapter-body">
+    <h2><small>Capítulo 4</small>Morte</h2>
+    <p>Você vai morrer. Quando morrer, vira fantasma. Você anda, vê os vivos, e tudo que diz sai como "OooOOoo". Seu corpo fica onde caiu, com tudo dentro.</p>
+    <p>O que sai do corpo e o que não sai:</p>
+    <ul class="rules">
+      <li>Tudo que você carrega pode ser levado por qualquer um. Isso é full loot.</li>
+      <li>O equipamento com que você foi criado é "newbied": fica com você. A não ser que você seja assassino; aí cai como o resto.</li>
+      <li>Um corpo dura sete minutos, vira ossos por mais sete, e some. O que está dentro também.</li>
+    </ul>
+    <p>Como voltar:</p>
+    <ul class="rules">
+      <li>O curandeiro de qualquer cidade ressuscita de graça quando você fica a até quatro tiles dele, na linha de visão. Curandeiros recusam criminosos e assassinos.</li>
+      <li>O ankh de um santuário ressuscita quando você chega perto ou dá um clique duplo nele.</li>
+      <li>Outro jogador pode ressuscitar você com uma bandagem, ou com a magia.</li>
+    </ul>
+    <p>Um assassino que ressuscita com cinco ou mais mortes recentes perde de cinco a quinze por cento de cada atributo e de cada skill. É o preço da cor.</p>
+  </div>
+</section>
+
+<section class="chapter reveal" id="crime">
+  <figure class="chapter-seal"><picture><source type="image/webp" srcset="/img/seal-orderchaos.webp"><img src="/img/seal-orderchaos.png" width="360" height="360" alt="Selo: um escudo prateado e um escudo vermelho cruzados atrás de uma espada, uma coroa acima" loading="lazy"></picture></figure>
+  <div class="chapter-body">
+    <h2><small>Capítulo 5</small>Crime e assassinato</h2>
+    <p>Todo mundo carrega uma cor. <strong>Azul</strong> é inocente. <strong>Cinza</strong> é criminoso, por dois minutos. <strong>Vermelho</strong> é assassino.</p>
+    <p>Você fica cinza ao atacar um azul, roubar, saquear um corpo que não é seu de saquear, ou curar alguém cinza ou vermelho. Nesses dois minutos você não usa o banco, não passa por moongate, e em cidade guardada qualquer um pode dizer <code>guards</code> e acabar com você.</p>
+    <p>As 49 cidades são guardadas. Buccaneer's Den não é. Fora das cidades não há guarda nenhum, e isso é a maior parte do mundo.</p>
+    <dl class="say">
+      <dt>I must consider my sins</dt><dd>o servidor diz quantos assassinatos contam contra você.</dd>
+    </dl>
+    <p>Cinco contagens de longo prazo fazem de você um vermelho. As contagens caem com o tempo jogado: uma de curto prazo a cada oito horas, uma de longo prazo a cada quarenta, e só enquanto você está no mundo. Não existe sistema de recompensa por cabeça aqui.</p>
+    <p>Vermelho é uma vida, não um castigo. Vermelhos não compram em cidade guardada, não são ressuscitados pelos curandeiros das cidades, e pagam a perda descrita acima. Alguns jogadores escolhem isso mesmo assim.</p>
+  </div>
+</section>
+
+<section class="chapter reveal" id="travel">
+  <figure class="chapter-seal"><picture><source type="image/webp" srcset="/img/seal-runebook.webp"><img src="/img/seal-runebook.png" width="360" height="360" alt="Selo: um livro aberto sobre uma pedra com uma runa brilhando em azul nas páginas" loading="lazy"></picture></figure>
+  <div class="chapter-body">
+    <h2><small>Capítulo 6</small>Viagem</h2>
+    <p><strong>Moongates.</strong> Há uma perto de cada uma de nove cidades: Moonglow, Britain, Jhelom, Yew, Minoc, Trinsic, Skara Brae, Magincia e Buccaneer's Den. Neste shard a moongate é um menu: clique duplo nela e escolha a cidade. As luas não decidem nada. Criminoso não passa, nem quem está no meio de uma luta.</p>
+    <p><strong>Runas.</strong> Compre uma runa em branco numa loja de mago, fique onde quer voltar, lance Mark nela, e a runa guarda o lugar. Recall na runa leva você lá. Gate Travel abre uma porta que outros podem usar. Um runebook guarda dezesseis runas.</p>
+    <p><strong>Preso.</strong> Abra o botão Help do paperdoll e escolha "My character is physically stuck". Em até dois minutos você é levado a Britain, Trinsic, Vesper, Minoc, Yew ou Cove. Funciona duas vezes por dia, não em combate, e não enquanto cinza.</p>
+  </div>
+</section>
+
+<section class="chapter reveal" id="pets">
+  <figure class="chapter-seal"><picture><source type="image/webp" srcset="/img/seal-stable.webp"><img src="/img/seal-stable.png" width="360" height="360" alt="Selo: a cabeça de um cavalo numa porta de estábulo, uma ferradura e uma corda enrolada abaixo" loading="lazy"></picture></figure>
+  <div class="chapter-body">
+    <h2><small>Capítulo 7</small>Pets, mercenários e estábulo</h2>
+    <p>Um animal domado ou um contratado obedece a palavras, a até 14 tiles de você.</p>
+    <dl class="say">
+      <dt>all follow me</dt><dd>também <code>all stay</code>, <code>all come</code>, <code>all stop</code>.</dd>
+      <dt>all kill</dt><dd>depois clique no alvo. <code>all guard me</code> mantém todos em cima de você.</dd>
+      <dt>Rex follow</dt><dd>um pet pelo nome; também <code>Rex stay</code>, <code>Rex kill</code>.</dd>
+      <dt>Rex release</dt><dd>ele volta a ser selvagem.</dd>
+      <dt>Rex transfer</dt><dd>dá o pet a outro jogador. <code>Rex friend</code> deixa um amigo dar ordens.</dd>
+      <dt>stable</dt><dd>ao treinador de animais, depois clique no pet. 30 de ouro por semana, da mochila ou do banco.</dd>
+      <dt>claim</dt><dd>pega todos de volta. <code>claim Rex</code> para um só.</dd>
+      <dt>hire</dt><dd>a um lutador de aluguel; ele diz o preço por dia. Solte o ouro nele e ele é seu por quantos dias você pagou.</dd>
+    </dl>
+  </div>
+</section>
+
+<section class="chapter reveal" id="home">
+  <figure class="chapter-seal"><picture><source type="image/webp" srcset="/img/seal-home.webp"><img src="/img/seal-home.png" width="360" height="360" alt="Selo: uma casa de pedra com janela acesa à beira-mar, um barco a vela, uma chave e uma âncora cruzadas" loading="lazy"></picture></figure>
+  <div class="chapter-body">
+    <h2><small>Capítulo 8</small>Casa e barco</h2>
+    <p><strong>Casas.</strong> Uma por conta. Compre a escritura de um arquiteto; uma casa pequena custa 43.800 de ouro, um castelo 1.022.800. Clique duplo na escritura e escolha o lugar. Uma casa em que ninguém entra por cinco dias decai e some, com tudo dentro.</p>
+    <dl class="say">
+      <dt>I wish to lock this down</dt><dd>de pé dentro da sua casa. <code>I wish to release this</code> desfaz.</dd>
+      <dt>I wish to secure this</dt><dd>um baú trancado que só você e co-donos abrem.</dd>
+      <dt>I ban thee</dt><dd>depois clique na visita. <code>remove thyself</code> põe para fora.</dd>
+      <dt>I wish to place a trash barrel</dt><dd>o que entra ali some.</dd>
+    </dl>
+    <p><strong>Barcos.</strong> O shipwright vende a escritura, a partir de 10.177 de ouro. Clique duplo nela e mire em mar aberto. Você recebe duas chaves, e elas não são abençoadas: guarde uma no banco no mesmo dia. A bordo, o timoneiro obedece.</p>
+    <dl class="say">
+      <dt>forward</dt><dd>também <code>back</code>, <code>left</code>, <code>right</code>, <code>turn left</code>, <code>turn right</code>, <code>come about</code>, <code>stop</code>.</dd>
+      <dt>drop anchor</dt><dd>e <code>raise anchor</code>.</dd>
+      <dt>Sea Hag name</dt><dd>dá nome ao barco.</dd>
+    </dl>
+    <p>Diga a palavra gravada nos Serpent Pillars estando a bordo, e os pilares levam o barco às Lost Lands.</p>
+  </div>
+</section>
+
+<section class="chapter reveal" id="shard">
+  <figure class="chapter-seal"><picture><source type="image/webp" srcset="/img/seal-shard.webp"><img src="/img/seal-shard.png" width="360" height="360" alt="Selo: um cristal facetado preso num engaste de bronze, com um mundo de mar e terra refletido dentro" loading="lazy"></picture></figure>
+  <div class="chapter-body">
+    <h2><small>Capítulo 9</small>Este shard, exatamente</h2>
+    <ul class="rules">
+      <li>Um mundo só, Felucca. Sem Trammel, sem segunda cópia de nada.</li>
+      <li>Sem chat global. Fale onde está, ou por livro e runa.</li>
+      <li>Sem seguro. Sem status de Young: desde o primeiro passo você é tão mortal quanto qualquer um.</li>
+      <li>Cinco personagens por conta. Cinco contas por endereço. Sua conta nasce na primeira vez que você loga, e a senha não se troca por comando.</li>
+      <li>Comandos começam com ponto: <code>.help</code> lista todos, <code>.time</code> diz o relógio do servidor.</li>
+      <li>O mundo salva a cada cinco minutos.</li>
+      <li>Há conteúdo customizado, e ele não está listado. Está no mundo para quem encontrar.</li>
+    </ul>
+  </div>
+</section>
+
+</div>
+</main>
+
+<footer>
+  <div class="inner">
+    <picture class="seal"><source type="image/webp" srcset="/img/seal.webp"><img src="/img/seal.png" width="360" height="360" alt="Selo do Living World: duas colunas de pedra esculpidas como serpentes erguendo-se do mar, um navio passando entre elas sob o sol nascente" loading="lazy"></picture>
+    <div>
+      <p>Living World — no ar desde 9 de setembro de 2026. <span class="mono">187.127.50.173:2593</span></p>
+      <p class="contact"><a href="/pt/">Voltar à página inicial</a> · Contato: <a href="mailto:edgebuildlabs@gmail.com">edgebuildlabs@gmail.com</a> · <a href="https://x.com/edgebuildlabs">@edgebuildlabs</a> no X</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

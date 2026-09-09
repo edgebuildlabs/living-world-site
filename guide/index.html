@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#150b06">
+<title>Living World Guide</title>
+<meta name="description" content="What Ultima Online never tells you, and what Living World does differently: the words NPCs understand, skills and caps, death, crime, travel, pets, houses and boats.">
+
+<link rel="canonical" href="https://livingworld.edgebuildlabs.tech/guide/">
+<link rel="alternate" hreflang="en" href="https://livingworld.edgebuildlabs.tech/guide/">
+<link rel="alternate" hreflang="pt-BR" href="https://livingworld.edgebuildlabs.tech/pt/guide/">
+<link rel="alternate" hreflang="es" href="https://livingworld.edgebuildlabs.tech/es/guide/">
+<link rel="alternate" hreflang="x-default" href="https://livingworld.edgebuildlabs.tech/guide/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Living World">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://livingworld.edgebuildlabs.tech/guide/">
+<meta property="og:title" content="Living World Guide">
+<meta property="og:description" content="What Ultima Online never tells you, and what Living World does differently. The words NPCs understand, skills and caps, death, crime, travel, pets, houses and boats.">
+<meta property="og:image" content="https://livingworld.edgebuildlabs.tech/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A red dragon breathing fire on a burning castle above a teal sea, with a lighthouse and a sailing boat, painted in amber sunset light">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Living World Guide">
+<meta name="twitter:description" content="What Ultima Online never tells you, and what Living World does differently.">
+<meta name="twitter:image" content="https://livingworld.edgebuildlabs.tech/img/og.jpg">
+
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64">
+<link rel="icon" href="/img/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="stylesheet" href="/css/site.css">
+</head>
+<body class="guide">
+
+<header class="guide-hero">
+  <nav class="lang" aria-label="Language">
+    <a href="/" class="home">Living World</a>
+    <a href="/guide/" hreflang="en" aria-current="page">English</a>
+    <a href="/pt/guide/" hreflang="pt-BR" lang="pt-BR">Português</a>
+    <a href="/es/guide/" hreflang="es" lang="es">Español</a>
+  </nav>
+  <div class="guide-hero-text">
+    <h1>The <span>Guide</span></h1>
+    <p class="identity">Britannia does not explain itself. In 1998 nobody expected it to: you asked another player, or you found out by dying. This page is the other player. It covers what the game never tells you and what this shard does differently. It does not cover the parts you are supposed to discover.</p>
+    <p class="how">The <em>Say this</em> lines are the exact words the server understands. Type them in the chat line and press Enter. Where a name is needed, use the name over the NPC's or the pet's head.</p>
+  </div>
+</header>
+
+<main>
+<div class="col wide">
+
+<section class="chapter reveal" id="first-minute">
+  <figure class="chapter-seal"><picture><source type="image/webp" srcset="/img/seal.webp"><img src="/img/seal.png" width="360" height="360" alt="Seal of Living World: two serpent-carved stone pillars rising from the sea, a ship passing between them under a rising sun" loading="lazy"></picture></figure>
+  <div class="chapter-body">
+    <h2><small>Chapter 1</small>The first minute</h2>
+    <p>Hold the right mouse button to walk; the farther the cursor from your character, the faster you go. Double right-click to walk to a spot. The camera does not turn.</p>
+    <ul class="keys">
+      <li><kbd>Alt</kbd>+<kbd>P</kbd> paperdoll</li>
+      <li><kbd>Alt</kbd>+<kbd>I</kbd> backpack</li>
+      <li><kbd>Alt</kbd>+<kbd>K</kbd> skills</li>
+      <li><kbd>Alt</kbd>+<kbd>S</kbd> status</li>
+      <li><kbd>Alt</kbd>+<kbd>J</kbd> journal</li>
+      <li><kbd>Alt</kbd>+<kbd>O</kbd> options</li>
+      <li><kbd>Tab</kbd> war mode on and off</li>
+    </ul>
+    <p>In war mode a double-click attacks. Enter opens the chat line; Enter again sends, and everyone within a screen hears you. Start a line with <code>!</code> to yell a screen and a half away, <code>;</code> to whisper one tile, <code>:</code> to emote.</p>
+    <p>Macros live in the paperdoll, under Options. Set at least two: <strong>Last Target</strong> and <strong>Target Self</strong>. Every spell, bandage and potion asks for a target; those two keys answer it.</p>
+    <p>Razor, three settings and no more: hotkeys for Target Self and Last Target; the Use Once agent for potions; an object delay a little above your ping. Everything else can wait a week.</p>
+  </div>
+</section>
+
+<section class="chapter reveal" id="town">
+  <figure class="chapter-seal"><picture><source type="image/webp" srcset="/img/seal-market.webp"><img src="/img/seal-market.png" width="360" height="360" alt="Seal: a merchant's balance with a coin purse and a stack of coins, a parchment behind" loading="lazy"></picture></figure>
+  <div class="chapter-body">
+    <h2><small>Chapter 2</small>Talking to the town</h2>
+    <p>Shopkeepers and bankers do not open a window when you click them. You speak.</p>
+    <dl class="say">
+      <dt>vendor buy</dt><dd>within 4 tiles of the shopkeeper. So is <code>vendor sell</code>. Or use the name: <code>Aldous sell</code>.</dd>
+      <dt>bank</dt><dd>within 12 tiles of a banker, opens your bank box.</dd>
+      <dt>balance</dt><dd>how much gold is in it.</dd>
+      <dt>withdraw 500</dt><dd>drops that much into your backpack, up to 5000 at a time.</dd>
+      <dt>check 5000</dt><dd>turns gold into a bank check, 5000 to one million.</dd>
+      <dt>guards</dt><dd>in a guarded town, calls the guards on anyone nearby who has just committed a crime. They arrive on the spot and kill on the spot.</dd>
+      <dt>Aldous train</dt><dd>any townsperson who knows a skill lists what he can teach. Pick the skill from the menu that appears, then drag gold onto him. One gold buys a tenth of a point. Trainers teach up to 42.0 and no further.</dd>
+      <dt>Aldous hire</dt><dd>some people work for you by the day. Drop gold to hire.</dd>
+      <dt>Aldous time</dt><dd>tells the hour. <code>news</code> near the town crier.</dd>
+    </dl>
+    <p>The bank holds 125 items, at any weight. Shopkeepers restock every hour, and in this shard they cannot be killed. A criminal cannot use the bank; a murderer cannot buy in a guarded town.</p>
+    <p>You start with 1000 gold, a dagger, a candle, a book, and the tools of your template: studded armour, a sword and bandages for the warrior; a spellbook, thirty of each reagent and a wizard's hat for the mage; tongs, pickaxes, fifty iron ingots, an apron and tinker tools for the smith.</p>
+  </div>
+</section>
+
+<section class="chapter reveal" id="skills">
+  <figure class="chapter-seal"><picture><source type="image/webp" srcset="/img/seal-craft.webp"><img src="/img/seal-craft.png" width="360" height="360" alt="Seal: an anvil with a hammer crossed with a quill, a book and a fishing hook" loading="lazy"></picture></figure>
+  <div class="chapter-body">
+    <h2><small>Chapter 3</small>Skills and stats</h2>
+    <p>There are no levels. Skills go up by doing. Every character has a cap on the sum of all skills, and this shard moves it with the calendar: 700 on the day the account is created, 25 more for every 30 days the account has existed, up to 1000 after twelve months. It is the account's age, not time played. Each single skill stops at 100.</p>
+    <p>Stats work the same way. Strength, Dexterity and Intelligence add up to at most 250, and none of them passes 100. So nobody is 100/100/100; you choose where the 250 go.</p>
+    <p>Open the skill window with Alt+K. Each skill has an arrow. <strong>Up</strong> means it may rise. <strong>Down</strong> means it may be drained to make room for another. The <strong>lock</strong> means it stays. When your total reaches the cap, a skill marked Down loses what another gains; if nothing is marked Down, nothing gains. Stats have the same arrows.</p>
+    <p>How gain works here:</p>
+    <ul class="rules">
+      <li>Below 10.0 a skill rises on every use. Above that, the harder the task for your level, the better the chance. Failing also teaches.</li>
+      <li>There is no guaranteed gain on a timer. If a skill has stalled, the task is too easy or too hard, not "too soon".</li>
+      <li>Repeating the same action in the same spot is watched: more than three times inside the same 5×5 tiles within five minutes, and the skill stops gaining there. Walk.</li>
+      <li>A stat can rise at most once every ten minutes.</li>
+      <li>A townsperson can teach a skill up to 42.0 for gold. After that, only practice.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="chapter reveal" id="death">
+  <figure class="chapter-seal"><picture><source type="image/webp" srcset="/img/seal-ankh.webp"><img src="/img/seal-ankh.png" width="360" height="360" alt="Seal: a stone ankh on an altar between two lit candles" loading="lazy"></picture></figure>
+  <div class="chapter-body">
+    <h2><small>Chapter 4</small>Death</h2>
+    <p>You will die. When you do, you become a ghost. You can walk, you can see the living, and everything you say comes out as "OooOOoo". Your body stays where it fell with everything in it.</p>
+    <p>What leaves the body and what does not:</p>
+    <ul class="rules">
+      <li>Anything you can carry can be taken by anyone. That is full loot.</li>
+      <li>The gear you were created with is "newbied": it stays with you. Unless you are a murderer; then it falls like the rest.</li>
+      <li>A body lasts seven minutes, then turns to bones for seven more, then is gone. So does what is in it.</li>
+    </ul>
+    <p>How to come back:</p>
+    <ul class="rules">
+      <li>A healer in any town resurrects you for free when you stand within four tiles in his line of sight. Healers refuse criminals and murderers.</li>
+      <li>A shrine's ankh resurrects you when you walk up to it or double-click it.</li>
+      <li>Another player can resurrect you with a bandage, or with the spell.</li>
+    </ul>
+    <p>A murderer who resurrects with five or more recent kills loses five to fifteen percent of every stat and every skill. That is the price of the colour.</p>
+  </div>
+</section>
+
+<section class="chapter reveal" id="crime">
+  <figure class="chapter-seal"><picture><source type="image/webp" srcset="/img/seal-orderchaos.webp"><img src="/img/seal-orderchaos.png" width="360" height="360" alt="Seal: a silver shield and a red shield crossed behind a sword, a crown above" loading="lazy"></picture></figure>
+  <div class="chapter-body">
+    <h2><small>Chapter 5</small>Crime and murder</h2>
+    <p>Everyone carries a colour. <strong>Blue</strong> is innocent. <strong>Grey</strong> is a criminal, for two minutes. <strong>Red</strong> is a murderer.</p>
+    <p>You turn grey by attacking a blue, stealing, looting a body that is not yours to loot, or healing someone who is grey or red. For those two minutes you cannot use the bank, you cannot pass a moongate, and in a guarded town anyone can say <code>guards</code> and end you.</p>
+    <p>The 49 towns are guarded. Buccaneer's Den is not. Outside a town there are no guards at all, and that is most of the world.</p>
+    <dl class="say">
+      <dt>I must consider my sins</dt><dd>the server tells you how many murders are counted against you.</dd>
+    </dl>
+    <p>Five long-term counts make you red. Counts fade with time played: one short-term count every eight hours, one long-term count every forty, and only while you are in the world. There is no bounty system here.</p>
+    <p>Red is a life, not a punishment. Reds cannot buy in guarded towns, cannot be resurrected by town healers, and pay the stat loss described above. Some players choose it anyway.</p>
+  </div>
+</section>
+
+<section class="chapter reveal" id="travel">
+  <figure class="chapter-seal"><picture><source type="image/webp" srcset="/img/seal-runebook.webp"><img src="/img/seal-runebook.png" width="360" height="360" alt="Seal: an open book on a stone with a rune stone glowing blue on its pages" loading="lazy"></picture></figure>
+  <div class="chapter-body">
+    <h2><small>Chapter 6</small>Travel</h2>
+    <p><strong>Moongates.</strong> There is one near each of nine towns: Moonglow, Britain, Jhelom, Yew, Minoc, Trinsic, Skara Brae, Magincia and Buccaneer's Den. In this shard a moongate is a menu: double-click it and choose the town. The moons decide nothing. A criminal cannot pass, and neither can anyone in the middle of a fight.</p>
+    <p><strong>Runes.</strong> Buy a blank rune from a mage shop, stand where you want to return, cast Mark on it, and the rune remembers the place. Recall on the rune takes you there. Gate Travel opens a door others can use. A runebook holds sixteen runes.</p>
+    <p><strong>Stuck.</strong> Open the paperdoll's Help button and choose "My character is physically stuck". Within two minutes you are carried to Britain, Trinsic, Vesper, Minoc, Yew or Cove. It works twice a day, not in combat, and not while grey.</p>
+  </div>
+</section>
+
+<section class="chapter reveal" id="pets">
+  <figure class="chapter-seal"><picture><source type="image/webp" srcset="/img/seal-stable.webp"><img src="/img/seal-stable.png" width="360" height="360" alt="Seal: a horse's head at a stable door, a horseshoe and a coiled rope below" loading="lazy"></picture></figure>
+  <div class="chapter-body">
+    <h2><small>Chapter 7</small>Pets, hirelings and stables</h2>
+    <p>A tamed animal or a hired hand listens to words, within 14 tiles of you.</p>
+    <dl class="say">
+      <dt>all follow me</dt><dd>also <code>all stay</code>, <code>all come</code>, <code>all stop</code>.</dd>
+      <dt>all kill</dt><dd>then click the target. <code>all guard me</code> keeps them on you.</dd>
+      <dt>Rex follow</dt><dd>one pet by name; also <code>Rex stay</code>, <code>Rex kill</code>.</dd>
+      <dt>Rex release</dt><dd>it is wild again.</dd>
+      <dt>Rex transfer</dt><dd>give it to another player. <code>Rex friend</code> lets a friend give it orders.</dd>
+      <dt>stable</dt><dd>to the animal trainer, then click the pet. 30 gold for a week, from your backpack or your bank.</dd>
+      <dt>claim</dt><dd>takes them all back. <code>claim Rex</code> for one.</dd>
+      <dt>hire</dt><dd>to a fighter for hire; he names a price per day. Drop the gold on him and he is yours for as many days as you paid.</dd>
+    </dl>
+  </div>
+</section>
+
+<section class="chapter reveal" id="home">
+  <figure class="chapter-seal"><picture><source type="image/webp" srcset="/img/seal-home.webp"><img src="/img/seal-home.png" width="360" height="360" alt="Seal: a stone cottage with a lit window by the sea, a sailing ship, a key and an anchor crossed" loading="lazy"></picture></figure>
+  <div class="chapter-body">
+    <h2><small>Chapter 8</small>House and boat</h2>
+    <p><strong>Houses.</strong> One per account. Buy the deed from an architect; a small house is 43,800 gold, a castle is 1,022,800. Double-click the deed and choose the spot. A house that nobody enters for five days decays and is gone, with everything in it.</p>
+    <dl class="say">
+      <dt>I wish to lock this down</dt><dd>standing inside your house. <code>I wish to release this</code> undoes it.</dd>
+      <dt>I wish to secure this</dt><dd>a locked container only you and co-owners open.</dd>
+      <dt>I ban thee</dt><dd>then click the guest. <code>remove thyself</code> throws them out.</dd>
+      <dt>I wish to place a trash barrel</dt><dd>what goes in is gone.</dd>
+    </dl>
+    <p><strong>Boats.</strong> The shipwright sells the deed, from 10,177 gold. Double-click it and target open water. You get two keys, and they are not blessed: put one in the bank the same day. On board, the tillerman listens.</p>
+    <dl class="say">
+      <dt>forward</dt><dd>also <code>back</code>, <code>left</code>, <code>right</code>, <code>turn left</code>, <code>turn right</code>, <code>come about</code>, <code>stop</code>.</dd>
+      <dt>drop anchor</dt><dd>and <code>raise anchor</code>.</dd>
+      <dt>Sea Hag name</dt><dd>names the ship.</dd>
+    </dl>
+    <p>Speak the word carved on the Serpent Pillars while aboard, and the pillars take the ship to the Lost Lands.</p>
+  </div>
+</section>
+
+<section class="chapter reveal" id="shard">
+  <figure class="chapter-seal"><picture><source type="image/webp" srcset="/img/seal-shard.webp"><img src="/img/seal-shard.png" width="360" height="360" alt="Seal: a faceted crystal shard held in a bronze setting, a world of sea and land reflected inside" loading="lazy"></picture></figure>
+  <div class="chapter-body">
+    <h2><small>Chapter 9</small>This shard, exactly</h2>
+    <ul class="rules">
+      <li>One world, Felucca. No Trammel, no second copy of anything.</li>
+      <li>No global chat. Talk where you stand, or by book and rune.</li>
+      <li>No insurance. No Young status: from your first step you are as mortal as anyone.</li>
+      <li>Five characters per account. Five accounts per address. Your account is created the first time you log in, and your password cannot be changed by command.</li>
+      <li>Commands start with a dot: <code>.help</code> lists them, <code>.time</code> tells the server's clock.</li>
+      <li>The world saves every five minutes.</li>
+      <li>There is custom content, and it is not listed. It is in the world for whoever finds it.</li>
+    </ul>
+  </div>
+</section>
+
+</div>
+</main>
+
+<footer>
+  <div class="inner">
+    <picture class="seal"><source type="image/webp" srcset="/img/seal.webp"><img src="/img/seal.png" width="360" height="360" alt="Seal of Living World: two serpent-carved stone pillars rising from the sea, a ship passing between them under a rising sun" loading="lazy"></picture>
+    <div>
+      <p>Living World — online since September 9, 2026. <span class="mono">187.127.50.173:2593</span></p>
+      <p class="contact"><a href="/">Back to the front page</a> · Contact: <a href="mailto:edgebuildlabs@gmail.com">edgebuildlabs@gmail.com</a> · <a href="https://x.com/edgebuildlabs">@edgebuildlabs</a> on X</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

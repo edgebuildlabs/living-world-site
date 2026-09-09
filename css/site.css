@@ -13,6 +13,15 @@
   src: url("/fonts/Cinzel-Variable.woff2") format("woff2");
   font-weight: 400 900; font-style: normal; font-display: swap;
 }
+/* digits only: IM Fell has old-style figures that sit low and small; Cinzel gives every number
+   on the page a lining, capital-height figure without touching the words */
+@font-face {
+  font-family: "Fell Figures";
+  src: url("/fonts/Cinzel-Variable.woff2") format("woff2");
+  font-weight: 400 900; font-style: normal; font-display: swap;
+  unicode-range: U+0030-0039;
+  size-adjust: 96%;
+}
 @font-face {
   font-family: "IM Fell English";
   src: url("/fonts/IMFellEnglish-Regular.woff2") format("woff2");
@@ -44,7 +53,7 @@
   --night: #150b06;
   --display: "Cinzel Decorative", "Cinzel", "Palatino Linotype", Palatino, Georgia, serif;
   --caps: "Cinzel", "Palatino Linotype", Palatino, Georgia, serif;
-  --serif: "IM Fell English", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --serif: "Fell Figures", "IM Fell English", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
   --mono: ui-monospace, "Cascadia Mono", Consolas, "Liberation Mono", Menlo, monospace;
   --frame-shadow: 0 22px 44px -26px rgba(42, 26, 18, 0.85), 0 2px 0 rgba(255, 244, 214, 0.5);
 }
@@ -435,6 +444,71 @@ footer .mono { color: var(--gold-light); font-variant-numeric: tabular-nums; }
 footer .contact { font-size: 0.95rem; color: rgba(243, 231, 201, 0.7); }
 footer .contact a { color: var(--gold-light); }
 
+/* ---------- the Guide page ---------- */
+
+.guide-hero {
+  position: relative; overflow: hidden;
+  background: var(--night) url("/img/moongate-night.jpg") center 40% / cover no-repeat;
+  background-image: image-set(url("/img/moongate-night.webp") type("image/webp"), url("/img/moongate-night.jpg") type("image/jpeg"));
+  color: var(--parchment-light);
+  border-bottom: 5px solid var(--terracotta-deep);
+  box-shadow: 0 6px 0 var(--gold-deep);
+}
+.guide-hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(21, 11, 6, 0.45), rgba(21, 11, 6, 0.5) 30%, rgba(21, 11, 6, 0.9) 62%, rgba(21, 11, 6, 0.97)); }
+.guide-hero-text { position: relative; max-width: 78rem; margin: 0 auto; padding: 9rem 1.5rem 2.6rem; }
+.guide-hero h1 {
+  font-size: clamp(2.4rem, 5vw, 5rem); letter-spacing: 0.05em; margin: 0 0 0.3em;
+  background: linear-gradient(180deg, #fbe7a6 0%, #e6c26a 45%, #b8892e 70%, #f1d98a 100%);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 0 #4a1e0c) drop-shadow(0 8px 22px rgba(0, 0, 0, 0.85));
+}
+.guide-hero .identity { max-width: 52rem; color: #fff8e6; text-shadow: 0 1px 2px #000, 0 0 18px #000, 0 0 40px rgba(0, 0, 0, 0.9); }
+.guide-hero .how { max-width: 52rem; margin: 0.9rem 0 0; font-size: 1.05rem; color: #f3e7c9; text-shadow: 0 1px 2px #000, 0 0 18px #000; }
+.guide-hero .how em { color: var(--gold-light); font-style: italic; }
+.lang .guide-link { margin-right: auto; color: var(--gold-light); font-family: var(--display); letter-spacing: 0.06em; }
+.lang:has(.guide-link) { left: 0; justify-content: flex-end; border-bottom-left-radius: 0; }
+.lang .home { margin-right: auto; color: var(--gold-light); font-family: var(--display); letter-spacing: 0.06em; }
+.guide .lang { left: 0; justify-content: flex-end; border-bottom-left-radius: 0; }
+
+.chapter {
+  display: grid; grid-template-columns: 10.5rem 1fr; gap: 2.5rem; align-items: start;
+  padding: 3rem 0 2rem; border-bottom: 1px solid rgba(138, 106, 30, 0.35);
+}
+.chapter:last-child { border-bottom: 0; }
+.chapter-seal { margin: 0; padding-top: 0.4rem; }
+.chapter-seal img { width: 10.5rem; height: 10.5rem; filter: drop-shadow(0 8px 16px rgba(42, 26, 18, 0.55)); }
+div.chapter-seal { width: 10.5rem; height: 10.5rem; margin-top: 0.4rem; border-radius: 50%; background: radial-gradient(circle at 40% 35%, rgba(201, 162, 74, 0.25), transparent 60%); box-shadow: inset 0 0 0 2px rgba(138, 106, 30, 0.35); }
+.chapter-body { max-width: 46rem; }
+.chapter h2 + p::first-letter {
+  font-family: var(--display); float: left; font-size: 3.4em; line-height: 0.82;
+  padding: 0.08em 0.12em 0 0; color: var(--terracotta-deep);
+  text-shadow: 0 1px 0 var(--parchment-light), 0 2px 0 rgba(90, 58, 42, 0.25);
+}
+
+/* "Say this": the words the server understands */
+.say {
+  position: relative; margin: 1.4rem 0 1.4rem; padding: 1.6rem 1.2rem 0.9rem;
+  display: grid; grid-template-columns: max-content 1fr; gap: 0.55rem 1.4rem; align-items: baseline;
+  background: linear-gradient(180deg, var(--parchment-light), #efe0bf);
+  border: 1px solid var(--gold-deep);
+  box-shadow: inset 0 0 0 3px var(--parchment-light), inset 0 0 0 4px var(--gold), inset 0 0 40px rgba(90, 58, 42, 0.12), var(--frame-shadow);
+}
+.say::before {
+  content: "Say this"; position: absolute; top: -0.75rem; left: 1rem;
+  font-family: var(--caps); font-weight: 700; font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--parchment-light); background: var(--terracotta-deep); padding: 0.25rem 0.7rem;
+  box-shadow: inset 0 0 0 1px var(--gold);
+}
+.say dt { font-family: var(--mono); font-size: 1.02rem; color: var(--ink); background: rgba(138, 106, 30, 0.12); padding: 0.1rem 0.5rem; border: 1px solid rgba(138, 106, 30, 0.35); user-select: all; -webkit-user-select: all; white-space: nowrap; }
+.say dd { margin: 0; font-size: 1.05rem; color: var(--ink-soft); }
+.say dd code, .chapter-body p code { font-family: var(--mono); font-size: 0.95em; background: rgba(138, 106, 30, 0.12); padding: 0.05rem 0.35rem; border: 1px solid rgba(138, 106, 30, 0.3); white-space: nowrap; }
+
+.keys { list-style: none; padding: 0; margin: 0.6rem 0 1rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 0.35rem 1.2rem; font-size: 1.05rem; }
+kbd { font-family: var(--caps); font-weight: 600; font-size: 0.78em; letter-spacing: 0.05em; padding: 0.1rem 0.45rem; border: 1px solid var(--gold-deep); border-bottom-width: 2px; background: var(--parchment-light); color: var(--ink); }
+.rules { margin: 0.4rem 0 1.2rem; padding-left: 1.3rem; }
+.rules li { margin-bottom: 0.45rem; }
+.rules li::marker { color: var(--terracotta-deep); }
+
 /* ---------- smaller screens: must not break ---------- */
 
 @media (max-width: 1100px) {
@@ -444,6 +518,11 @@ footer .contact a { color: var(--gold-light); }
 }
 
 @media (max-width: 900px) {
+  .chapter { grid-template-columns: 1fr; gap: 1rem; }
+  .chapter-seal img, div.chapter-seal { width: 7rem; height: 7rem; }
+  .say { grid-template-columns: 1fr; gap: 0.2rem 0; }
+  .say dt { justify-self: start; margin-top: 0.5rem; }
+  .guide-hero-text { padding: 6rem 1.5rem 2rem; }
   .hero-bar { grid-template-columns: 1fr; gap: 1rem; padding: 1.25rem 1.5rem; }
   .connect { grid-template-columns: max-content max-content; width: max-content; max-width: 100%; }
   .hero-painting { height: 62vh; }
