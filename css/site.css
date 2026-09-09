@@ -17,7 +17,7 @@
    on the page a lining, capital-height figure without touching the words */
 @font-face {
   font-family: "Fell Figures";
-  src: url("/fonts/Cinzel-Variable.woff2") format("woff2");
+  src: url("/fonts/CinzelFigures-Bold.woff2") format("woff2");
   font-weight: 400 900; font-style: normal; font-display: swap;
   unicode-range: U+0030-0039;
   size-adjust: 96%;
@@ -465,7 +465,26 @@ footer .contact a { color: var(--gold-light); }
 .guide-hero .identity { max-width: 52rem; color: #fff8e6; text-shadow: 0 1px 2px #000, 0 0 18px #000, 0 0 40px rgba(0, 0, 0, 0.9); }
 .guide-hero .how { max-width: 52rem; margin: 0.9rem 0 0; font-size: 1.05rem; color: #f3e7c9; text-shadow: 0 1px 2px #000, 0 0 18px #000; }
 .guide-hero .how em { color: var(--gold-light); font-style: italic; }
-.lang .guide-link { margin-right: auto; color: var(--gold-light); font-family: var(--display); letter-spacing: 0.06em; }
+.lang .guide-link {
+  margin-right: auto; color: var(--gold-light); font-family: var(--display); font-size: 1rem; letter-spacing: 0.08em;
+  padding: 0.45rem 1.1rem; border: 1px solid var(--gold); background: rgba(21, 11, 6, 0.55);
+  box-shadow: inset 0 0 0 3px rgba(21, 11, 6, 0.55), inset 0 0 0 4px rgba(201, 162, 74, 0.45), 0 4px 14px rgba(0, 0, 0, 0.6);
+}
+.lang .guide-link:hover { color: #fff; text-decoration: none; background: rgba(90, 36, 16, 0.75); }
+/* the call to the Guide, in the hero bar and at the foot of the front page */
+.cta {
+  display: inline-block; margin-top: 0.6rem; padding: 0.6rem 1.3rem;
+  font-family: var(--display); font-size: 1.05rem; letter-spacing: 0.08em; text-decoration: none;
+  color: var(--gold-light); background: linear-gradient(180deg, #4a2f18, #2a1a0e 60%, #1c1008);
+  border: 1px solid var(--gold-deep);
+  box-shadow: inset 0 1px 0 rgba(255, 224, 150, 0.35), inset 0 -1px 0 rgba(0, 0, 0, 0.7), inset 0 0 0 4px #1c1008, inset 0 0 0 5px rgba(201, 162, 74, 0.55), 0 8px 20px -10px #000;
+}
+.cta:hover { color: #fff; text-decoration: none; }
+.guide-card { display: grid; grid-template-columns: 8.5rem 1fr; gap: 1.6rem; align-items: center; padding: 1.4rem 1.6rem; margin: 1rem 0 0.5rem; }
+.guide-card img { width: 8.5rem; height: 8.5rem; filter: drop-shadow(0 6px 14px rgba(42, 26, 18, 0.55)); }
+.guide-card h2 { margin-bottom: 0.4em; }
+.guide-card p { margin-bottom: 0.6em; }
+.guide-card .cta { color: var(--gold-light); }
 .lang:has(.guide-link) { left: 0; justify-content: flex-end; border-bottom-left-radius: 0; }
 .lang .home { margin-right: auto; color: var(--gold-light); font-family: var(--display); letter-spacing: 0.06em; }
 .guide .lang { left: 0; justify-content: flex-end; border-bottom-left-radius: 0; }
@@ -519,6 +538,7 @@ kbd { font-family: var(--caps); font-weight: 600; font-size: 0.78em; letter-spac
 
 @media (max-width: 900px) {
   .chapter { grid-template-columns: 1fr; gap: 1rem; }
+  .guide-card { grid-template-columns: 1fr; justify-items: start; }
   .chapter-seal img, div.chapter-seal { width: 7rem; height: 7rem; }
   .say { grid-template-columns: 1fr; gap: 0.2rem 0; }
   .say dt { justify-self: start; margin-top: 0.5rem; }
